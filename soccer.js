@@ -45,13 +45,12 @@ var teams = [
     'The Netherlands'
 ];
 
-$('.fact_card').append('<p class="one_event">And we\'re off!')
+$('.fact_card').append('<p class="one_event">And we\'re off!');
 
 
 
 var match = setInterval(function(){
 
-minute.text(parseInt(minute.text()) + 1);
 
 if(parseInt(minute.text()) == 90){
 
@@ -67,7 +66,34 @@ if(parseInt($('span[data-id="' + teams[0] + '"]').text()) >  parseInt($('span[da
 
 $('.fact_card').scrollTop(1E10);
 
+crowdSFX.pause();
+
+lwSFX.play();
+return false;
+
 }
+
+if(parseInt(minute.text()) == 45){
+
+    if(ht <= 20){
+        if(ht == 0){
+            $('.fact_card').append('<p class="one_event"> It\'s a half time.</p>');
+            swSFX.play();
+        }
+    if(ht == 20){
+        $('.fact_card').append('<p class="one_event"> The second half started.</p>');
+        swSFX.play();
+    }
+    $('.fact_card').scrollTop(1E10);
+    ht++;
+
+    return false;
+    }
+}
+minute.text(parseInt(minute.text()) + 1);
+
+
+
 }, 200);
 
 
