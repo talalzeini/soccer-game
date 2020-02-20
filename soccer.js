@@ -16,7 +16,7 @@ $(document).ready(function(){
         return Math.floor(Math.random() * number) + 1;
     }
   
-    $('*').click(function(){
+    $('button').click(function(){
         if(inProgress == true ){
         return false;
         }

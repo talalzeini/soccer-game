@@ -12,7 +12,7 @@ html, body{
     font-family: 'Courier New', Courier, monospace;
 }
 body{
-    background-image: url(fifa.jpg);
+    background-image: url(fifa1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -21,7 +21,7 @@ body{
 }
 .score_card{
     width:500px;
-    border-radius:7px;
+    border-radius:30px;
     background-color:red;
     display:block;
     margin: 40px auto;
@@ -47,6 +47,7 @@ body{
     float:left;
     text-align:center;
     color:white;
+    font-size: 20px;
     padding-top:40px;
     width:calc(100% - 300px);
 }
@@ -65,7 +66,7 @@ text-align: left;
 }
 .left_team .team_container img,
 .right_team .team_container img{
-width:35px;
+width:100px;
 float:right;
 display: block;
 margin: 0 auto;
@@ -75,19 +76,19 @@ margin: 0 auto;
 }
 .left_team .team_container span,
 .right_team .team_container span{
-font-size:40px;
+font-size:50px;
 clear: both;
 display: block;
-width: 100%;
+width: 81%;
 margin-left: -6px;
 }
 .right_team .team_container span{
-    margin-left: 6px;
+    margin-left: 36px;
 }
 
 .start{
     width: 100%;
-    font-size: 20px;
+    font-size: 30px;
     color:white;
 text-align: center;
 display: block;
@@ -104,13 +105,38 @@ padding-top: 30px;
     padding: 20px;
     box-sizing: border-box;
     border:solid 5px #555555;
+    border-radius: 30px;
     background-color: rgba(85,85,85, 0.8);
 }
 .one_event{
 
 width:100%;
-font-size:20px;
+font-size:23px;
 color:white;
 margin-bottom: 10px;
 
+}
+button{
+    background: rgba(0, 0, 0, 0.2);
+    border:none;
+    width: 150px;
+    height:50px;
+    color:white;
+    font-size:20px;
+    text-align: center;
+    border-radius: 20px;
+    letter-spacing: 5px;
+    transition: all 0.2s ease-out;
+}
+button:hover{
+    background: rgba(0, 0, 0, 0.4);
+    border:none;
+    width: 150px;
+    height:50px;
+    transform: scale(1.05);
+    color:white;
+    font-size:20px;
+    text-align: center;
+    border-radius: 20px;
+    letter-spacing: 5px;
 }
