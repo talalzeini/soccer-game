@@ -1,0 +1,111 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration:none;
+    
+}
+html, body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family: 'Courier New', Courier, monospace;
+}
+::-webkit-scrollbar{
+    display:none;
+}
+.score_card{
+    width:500px;
+    border-radius:7px;
+    background-color:red;
+    display:block;
+    margin: 40px auto;
+    overflow:hidden;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: rgba(85,85,85, 0.9);
+    border: solid 6px #555555;
+}
+.inner_card{
+    width:400px;
+    display:block;
+    margin:0 auto;
+    overflow:hidden;
+}   
+.left_team, .right_team{
+    height:100%;
+    display:block;
+    width:150px;
+    float: left;
+}
+.vs{
+    float:left;
+    text-align:center;
+    color:white;
+    padding-top:40px;
+    width:calc(100% - 300px);
+}
+.left_team .team_container,
+.right_team .team_container{
+
+    font-size:18px;
+    color:white;
+    text-align: right;
+     font-weight:300;
+     width:100%;
+    
+}
+.right_team .team_container{
+text-align: left;
+}
+.left_team .team_container img,
+.right_team .team_container img{
+width:35px;
+float:right;
+display: block;
+margin: 0 auto;
+}
+.right_team .team_container img{
+    float:left;
+}
+.left_team .team_container span,
+.right_team .team_container span{
+font-size:40px;
+clear: both;
+display: block;
+width: 100%;
+margin-left: -6px;
+}
+.right_team .team_container span{
+    margin-left: 6px;
+}
+
+.start{
+    width: 100%;
+    font-size: 20px;
+    color:white;
+text-align: center;
+display: block;
+padding-top: 30px;
+}
+
+.fact_card{
+
+    width: 700px;
+    height:300px;
+    display:block;
+    margin: 50px auto;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border:solid 5px #555555;
+    background-color: rgba(85,85,85, 0.8);
+}
+.one_event{
+
+width:100%;
+font-size:20px;
+color:white;
+margin-bottom: 10px;
+
+}
