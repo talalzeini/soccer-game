@@ -32,16 +32,18 @@ inProgress = true;
 var events = [
 
 'have scored.',
+'have scored a penalty.',
+'have scored a freekick.',
 'shot and missed.',
-'missed a chance.',
+'almost scored.',
+'missed a big opportunity.',
 'received a yellow card.',
 'have had a player sent off.',
-'have had a player injured.',
 'have a corner.',
-'have a freekick.',
-'missed a penalty',
+'missed a freekick.',
+'missed a penalty.',
 'shot and hit the post.',
-'are in possesion',
+'are in possesion.',
 ];
 
 var teams = ['Lebanon', 'England'];
@@ -58,17 +60,17 @@ if(parseInt(minute.text()) == 90){
 clearInterval(match);
 if (parseInt($('span[data-id="' + teams[0] + '"]').text()) >  parseInt($('span[data-id="' + teams[1] + '"]').text())){
 
-    $('.fact_card').append('<p class="one_event">' + teams[0] + ' wins. </p>');
+    $('.fact_card').append('<p style="font-weight:bold;"  class="one_event">' + teams[0] + ' wins. </p>');
     console.log(teams[1]);
 }
 
 
 else if(parseInt($('span[data-id="' + teams[1] + '"]').text()) >  parseInt($('span[data-id="' + teams[0] + '"]').text())){
 
-    $('.fact_card').append('<p class="one_event"> '+ teams[1] +'  wins. </p>');
+    $('.fact_card').append('<p style="font-weight:bold;"  class="one_event"> '+ teams[1] +'  wins. </p>');
 
 }else{
-    $('.fact_card').append('<p class="one_event"> It\'s a draw.</p>');
+    $('.fact_card').append('<p style="font-weight:bold;"  class="one_event"> It\'s a draw.</p>');
 }
 $('.fact_card').scrollTop(1E10);
 crowdSFX.pause();
@@ -82,12 +84,12 @@ if(parseInt(minute.text()) == 45){
 
     if(ht <= 20){
         if(ht == 0){
-            $('.fact_card').append('<p class="one_event"> It\'s a half time.</p>');
+            $('.fact_card').append('<p style="font-weight:bold;" class="one_event"> It\'s half time.</p>');
             swSFX.play();
            
         }
     if(ht == 20){
-        $('.fact_card').append('<p class="one_event"> The second half started.</p>');
+        $('.fact_card').append('<p style="font-weight:bold;"  class="one_event"> The second half just started.</p>');
         swSFX.play();
     }
     $('.fact_card').scrollTop(1E10);
@@ -109,7 +111,7 @@ var whichTeam = randUpTo(2);
 
 var eventHappened = randUpTo(events.length);
 
-if(eventHappened - 1 == 0){
+if(eventHappened - 1 == 0 || eventHappened - 1 == 1 || eventHappened - 1 == 2){
 
     var score =  $('span[data-id="' + teams[whichTeam -1] + '"]');
     score.text(parseInt(score.text()) + 1);   
