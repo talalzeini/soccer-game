@@ -31,19 +31,20 @@ var ht = 0;
 inProgress = true;
 var events = [
 
-'have scored',
-'shot and missed',
-'missed by a mile',
-'received a yellow card',
-'have had a player sent off',
-'have a corner',
-'have freekick',
+'have scored.',
+'shot and missed.',
+'missed a chance.',
+'received a yellow card.',
+'have had a player sent off.',
+'have had a player injured.',
+'have a corner.',
+'have a freekick.',
+'missed a penalty',
+'shot and hit the post.',
+'are in possesion',
 ];
 
-var teams = [
-    'England',
-    'The Netherlands'
-];
+var teams = ['Lebanon', 'England'];
 
 $('.fact_card').append('<p class="one_event">And we\'re off!');
 
@@ -55,17 +56,21 @@ var match = setInterval(function(){
 if(parseInt(minute.text()) == 90){
 
 clearInterval(match);
-if(parseInt($('span[data-id="' + teams[0] + '"]').text()) >  parseInt($('span[data-id="' + teams[1] + '"]').text())){
+if (parseInt($('span[data-id="' + teams[0] + '"]').text()) >  parseInt($('span[data-id="' + teams[1] + '"]').text())){
 
-    $('.fact_card').append('<p class="one_event"> + teams[0] + wins. </p>');
-}else if(parseInt($('span[data-id="' + teams[0] + '"]').text()) <  parseInt($('span[data-id="' + teams[1] + '"]').text())){
-    $('.fact_card').append('<p class="one_event"> + teams[1] + wins. </p>');
+    $('.fact_card').append('<p class="one_event">' + teams[0] + ' wins. </p>');
+    console.log(teams[1]);
+}
+
+
+else if(parseInt($('span[data-id="' + teams[1] + '"]').text()) >  parseInt($('span[data-id="' + teams[0] + '"]').text())){
+
+    $('.fact_card').append('<p class="one_event"> '+ teams[1] +'  wins. </p>');
+
 }else{
     $('.fact_card').append('<p class="one_event"> It\'s a draw.</p>');
 }
-
 $('.fact_card').scrollTop(1E10);
-
 crowdSFX.pause();
 
 lwSFX.play();
@@ -79,6 +84,7 @@ if(parseInt(minute.text()) == 45){
         if(ht == 0){
             $('.fact_card').append('<p class="one_event"> It\'s a half time.</p>');
             swSFX.play();
+           
         }
     if(ht == 20){
         $('.fact_card').append('<p class="one_event"> The second half started.</p>');
@@ -86,12 +92,34 @@ if(parseInt(minute.text()) == 45){
     }
     $('.fact_card').scrollTop(1E10);
     ht++;
-
+ 
     return false;
     }
 }
+
+
+
 minute.text(parseInt(minute.text()) + 1);
 
+var thisEvent = randUpTo(100);
+
+if(thisEvent < 20){
+
+var whichTeam = randUpTo(2);
+
+var eventHappened = randUpTo(events.length);
+
+if(eventHappened - 1 == 0){
+
+    var score =  $('span[data-id="' + teams[whichTeam -1] + '"]');
+    score.text(parseInt(score.text()) + 1);   
+    }
+    
+$('.fact_card').append('<p class="one_event">' + minute.text() + ' - ' + teams[whichTeam -1] + ' ' + events[eventHappened -1 ] + '</p>');
+
+$('.fact_card').scrollTop(1E10);
+
+}
 
 
 }, 200);

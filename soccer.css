@@ -11,6 +11,11 @@ html, body{
     overflow:hidden;
     font-family: 'Courier New', Courier, monospace;
 }
+body{
+    background-image: url(fifa.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 ::-webkit-scrollbar{
     display:none;
 }
