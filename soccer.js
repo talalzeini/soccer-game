@@ -48,5 +48,28 @@ var teams = [
 $('.fact_card').append('<p class="one_event">And we\'re off!')
 
 
+
+var match = setInterval(function(){
+
+minute.text(parseInt(minute.text()) + 1);
+
+if(parseInt(minute.text()) == 90){
+
+clearInterval(match);
+if(parseInt($('span[data-id="' + teams[0] + '"]').text()) >  parseInt($('span[data-id="' + teams[1] + '"]').text())){
+
+    $('.fact_card').append('<p class="one_event"> + teams[0] + wins. </p>');
+}else if(parseInt($('span[data-id="' + teams[0] + '"]').text()) <  parseInt($('span[data-id="' + teams[1] + '"]').text())){
+    $('.fact_card').append('<p class="one_event"> + teams[1] + wins. </p>');
+}else{
+    $('.fact_card').append('<p class="one_event"> It\'s a draw.</p>');
+}
+
+$('.fact_card').scrollTop(1E10);
+
+}
+}, 200);
+
+
 });
 });
