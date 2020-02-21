@@ -1,6 +1,8 @@
 $(document).ready(function(){
     
-
+    const startButton = document.getElementById('events');
+    const mainSide= document.getElementById('side');
+    const secondSide= document.getElementById('side1');
     var inProgress              = false;
     var goalSFX                 = new Audio('goal.wav')
     var crowdSFX                = new Audio('crowd.wav')
@@ -12,15 +14,28 @@ $(document).ready(function(){
     lwSFX.volume           = 0.7;
     swSFX.volume            = 0.3;
 
+
+
+
+
     function randUpTo(number){
         return Math.floor(Math.random() * number) + 1;
     }
-  
-    $('button').click(function(){
+    $('.resize').click(function(){
+
+
+        mainSide.classList.add('hide');
+        secondSide.classList.remove('hide');
+    
+    
+    });
+    
+    $('.start').click(function(){
         if(inProgress == true ){
         return false;
         }
-
+        startButton.classList.add('fact_card');
+        startButton.classList.add('fadeRight');
         crowdSFX.play();
         lwSFX.play();
         $('.start').text('0'); 
@@ -114,8 +129,10 @@ var eventHappened = randUpTo(events.length);
 if(eventHappened - 1 == 0 || eventHappened - 1 == 1 || eventHappened - 1 == 2){
 
     var score =  $('span[data-id="' + teams[whichTeam -1] + '"]');
-    score.text(parseInt(score.text()) + 1);   
+    score.
+    text(parseInt(score.text()) + 1);   
     }
+
     
 $('.fact_card').append('<p class="one_event">' + minute.text() + ' - ' + teams[whichTeam -1] + ' ' + events[eventHappened -1 ] + '</p>');
 
@@ -124,7 +141,7 @@ $('.fact_card').scrollTop(1E10);
 }
 
 
-}, 200);
+}, 400);
 
 
 });
