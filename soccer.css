@@ -99,16 +99,57 @@ padding-top: 30px;
 
 .skip{
 
+    background: rgba(0, 0, 0, 0.2);
+    border:none;
+    width: 150px;
+    height:50px;
+    color:white;
+    font-size:20px;
+    text-align: center;
+    border-radius: 20px;
+    letter-spacing: 5px;
+    transition: all 0.2s ease-out;
 
-width: 100%;
-font-size: 30px;
-color:white;
+}
+.skiphid{
+    background: transparent;
+    border:none;
+    width: 150px;
+    height:50px;
+    color:transparent;
+    font-size:20px;
+    text-align: center;
+    border-radius: 20px;
+    letter-spacing: 5px;
+    transition: all 0.2s ease-out;
+}
+
+
+
+.skip:hover{
+    background: rgba(0, 0, 0, 0.4);
+    border:none;
+    width: 150px;
+    height:50px;
+    transform: scale(1.05);
+    color:white;
+    font-size:20px;
+    text-align: center;
+    border-radius: 20px;
+    letter-spacing: 5px;
+}
+
+.skip1{
+    width: 100%;
+    font-size: 30px;
+    color:white;
 text-align: center;
 display: block;
 padding-top: 150px;
-
-
 }
+
+
+
 
 .fact_card{
 
@@ -131,7 +172,7 @@ color:white;
 margin-bottom: 10px;
 
 }
-button{
+.but{
     background: rgba(0, 0, 0, 0.2);
     border:none;
     width: 150px;
@@ -143,7 +184,7 @@ button{
     letter-spacing: 5px;
     transition: all 0.2s ease-out;
 }
-button:hover{
+.but:hover{
     background: rgba(0, 0, 0, 0.4);
     border:none;
     width: 150px;
@@ -219,13 +260,14 @@ animation: 3s fadeRight;
     from{
     opacity:1;
 
-    -webkit-transform:translate3d(200%, 0, 0);
-    transform: translate3d(200%, 0, 0);
+    -webkit-transform:translate3d(400%, 0, 0);
+    transform: translate3d(400%, 0, 0);
     }
     to{
     opacity:0;
-    -webkit-transform:translate3d(200%, 0, 0);
-    transform: translate3d(200%, 0, 0);
+    -webkit-transform:translate3d(400%, 0, 0);
+    transform: translate3d(400%, 0, 0);
+    display: none;
     }
     }
     @keyframes fadeRightOut{
@@ -236,14 +278,15 @@ animation: 3s fadeRight;
         }
         to{
     opacity:0;
-    -webkit-transform:translate3d(200%, 0, 0);
-    transform: translate3d(200%, 0, 0);
+    -webkit-transform:translate3d(400%, 0, 0);
+    transform: translate3d(400%, 0, 0);
+    display: none;
         }
     }
     .fadeRightOut{
     -webkit-animation-name:fadeRightOut;
     animation-name:fadeRightOut; 
-    animation: 3s fadeRightOut;   
+    animation: 1s fadeRightOut;   
     }
     
     

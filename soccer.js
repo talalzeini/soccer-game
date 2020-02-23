@@ -38,6 +38,8 @@ $(document).ready(function(){
         startButton.classList.add('fact_card');
         startButton.classList.add('fadeRight');
         skipBut.classList.add('fadeRightOut');
+        skipBut.classList.remove('fadeRight');
+        skipBut.classList.add('skiphid');
         crowdSFX.play();
         lwSFX.play();
         $('.start').text('0'); 
