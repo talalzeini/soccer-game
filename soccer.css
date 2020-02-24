@@ -334,8 +334,7 @@ animation: 3s fadeRight;
     z-index: 2;
     
   }
-  
-  /* Sidebar links */
+
   .sidebar a {
     display: block;
     color: white;
@@ -348,7 +347,7 @@ animation: 3s fadeRight;
     background-color: #cc0088;
     font-weight: normal;
     margin: 10px;
-    border-radius: 15px;
+    
     transition: all 0.1s ease-out;
   }
   .sidebar i{
