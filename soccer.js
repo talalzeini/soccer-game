@@ -1,17 +1,20 @@
+
+
+
 $(document).ready(function(){
-    
+  
     const startButton = document.getElementById('events');
     const mainSide= document.getElementById('side');
     const secondSide= document.getElementById('side1');
     const skipBut = document.getElementById('skip');
     var inProgress              = false;
-    var goalSFX                 = new Audio('goal.wav')
+
     var crowdSFX                = new Audio('crowd.wav')
     var lwSFX                   = new Audio('longwhistle.wav')
     var swSFX                   = new Audio('shortwhistle.wav')
 
 
-    goalSFX.volume         = 0.5;
+ 
     lwSFX.volume           = 0.7;
     swSFX.volume            = 0.3;
 
@@ -40,8 +43,7 @@ $(document).ready(function(){
         skipBut.classList.add('fadeRightOut');
         skipBut.classList.remove('fadeRight');
         skipBut.classList.add('skiphid');
-        crowdSFX.play();
-        lwSFX.play();
+
         $('.start').text('0'); 
 
 var minute = $('.start');
@@ -50,31 +52,60 @@ var ht = 0;
 inProgress = true;
 var events = [
 
-'have scored.',
-'have scored a penalty.',
-'have scored a freekick.',
-'have had a player injured.',
+'scored.',
+'scored a penalty.',
+'scored a freekick.',
 'shot and missed.',
 'almost scored.',
 'missed a big opportunity.',
 'received a yellow card.',
-'have had a player sent off.',
-'have a corner.',
+'made a foul.',
+'lost possesion.',
+'is taking a corner.',
+'was close, but he lost possesion.',
+'intercepted the ball.',
+'made a risky tackle and took possesion.',
 'missed a freekick.',
-'missed a penalty.',
 'shot and hit the post.',
-'are in possesion.',
 ];
 
-var teams = ['Lebanon', 'France'];
+
+
+var chelseaPlayer =  [
+'Abraham',
+'Willian',
+'Kante',
+'Mason Mount',
+'Azpilicueta',
+'Zouma',
+'Marcos Alonso',
+'Pulisic',
+'Barkley',
+'Rudiger',
+'Jorginho',
+]
+var arsenalPlayer =  [
+'Aubameyang',
+'Lacazette',
+'Xhaka',
+'David Luiz',
+'Sokratis',
+'Monreal',
+'Ozil',
+'Pepe',
+'Ceballos',
+'Mustafi',
+'Bellerin',
+]
+
+
+
 
 $('.fact_card').append('<p class="one_event">And we\'re off!');
 
-
-
 var match = setInterval(function(){
-
-
+var teams = ['Chelsea', 'Arsenal']
+var team = ["(CHE) " + chelseaPlayer[Math.floor(Math.random()*(11-1))], "(ARS) " + arsenalPlayer[Math.floor(Math.random()*(10-1))]];
 if(parseInt(minute.text()) == 90){
 
 clearInterval(match);
@@ -93,9 +124,9 @@ else if(parseInt($('span[data-id="' + teams[1] + '"]').text()) >  parseInt($('sp
     $('.fact_card').append('<p   class="one_event"> <br> The game has come to an end. <br><br> It\'s a draw.</p>');
 }
 $('.fact_card').scrollTop(1E10);
-crowdSFX.pause();
 
-lwSFX.play();
+
+
 return false;
 
 }
@@ -105,12 +136,12 @@ if(parseInt(minute.text()) == 45){
     if(ht <= 20){
         if(ht == 0){
             $('.fact_card').append('<br><p class="one_event"> It\'s half time.</p>');
-            swSFX.play();
+           
            
         }
     if(ht == 20){
         $('.fact_card').append('<br><p   class="one_event"> The second half just started.</p><br>');
-        swSFX.play();
+    
     }
     $('.fact_card').scrollTop(1E10);
     ht++;
@@ -133,9 +164,9 @@ var eventHappened = randUpTo(events.length);
 
 if(eventHappened - 1 == 0 || eventHappened - 1 == 1 || eventHappened - 1 == 2){
 
-    var score =  $('span[data-id="' + teams[whichTeam -1] + '"]');
+    var score =  $('span[data-id="'+ teams[whichTeam-1] + '"]');
     score.text(parseInt(score.text()) + 1);  
-    myER(); 
+  
     }
   
     
@@ -143,7 +174,7 @@ if(eventHappened - 1 == 0 || eventHappened - 1 == 1 || eventHappened - 1 == 2){
 
 
     
-$('.fact_card').append('<p class="one_event">' + minute.text() + ' - ' + teams[whichTeam -1] + ' ' + events[eventHappened -1 ] + '</p>');
+$('.fact_card').append('<p class="one_event">' + minute.text() + ' - ' + team[whichTeam -1] + ' ' + events[eventHappened -1 ] + '</p>');
 
 $('.fact_card').scrollTop(1E10);
 
@@ -163,8 +194,7 @@ $('.skip').click(function(){
     }
     startButton.classList.add('fact_card');
     startButton.classList.add('fadeRight');
-    crowdSFX.play();
-    lwSFX.play();
+  
     $('.start').text('0'); 
 
 var minute = $('.start');
@@ -189,7 +219,7 @@ var events = [
 'are in possesion.',
 ];
 
-var teams = ['Lebanon', 'France'];
+var teams = ['Chelsea', 'Arsenal'];
 
 $('.fact_card').append('<p class="one_event">And we\'re off!');
 
@@ -216,9 +246,9 @@ $('.fact_card').append('<p   class="one_event"> <br> The game has come to an end
 $('.fact_card').append('<p   class="one_event"> <br> The game has come to an end. <br><br> It\'s a draw.</p>');
 }
 $('.fact_card').scrollTop(1E10);
-crowdSFX.pause();
 
-lwSFX.play();
+
+
 return false;
 
 }
@@ -228,12 +258,12 @@ if(parseInt(minute.text()) == 45){
 if(ht <= 20){
     if(ht == 0){
         $('.fact_card').append('<br><p class="one_event"> It\'s half time.</p>');
-        swSFX.play();
+     
        
     }
 if(ht == 20){
     $('.fact_card').append('<br><p   class="one_event"> The second half just started.</p><br>');
-    swSFX.play();
+
 }
 $('.fact_card').scrollTop(1E10);
 ht++;
@@ -258,7 +288,7 @@ if(eventHappened - 1 == 0 || eventHappened - 1 == 1 || eventHappened - 1 == 2){
 
 var score =  $('span[data-id="' + teams[whichTeam -1] + '"]');
 score.text(parseInt(score.text()) + 1);  
-myER(); 
+
 }
 
 
@@ -279,23 +309,101 @@ $('.fact_card').scrollTop(1E10);
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
+
+
+
+
+
+function inbox(){
+    const squad = document.getElementById('squad');
+    const home = document.getElementById('home');
+    const inbox = document.getElementById('inbox');
+    const tr = document.getElementById('tr');
+    const career = document.getElementById('career');
+    const finances = document.getElementById('finances');
+    const settings= document.getElementById('settings');
+    const flights = document.getElementById('flights');
+    const competitions = document.getElementById('comp');
+    const health = document.getElementById('health');
+    const transfers = document.getElementById('transfers');
+    const schedule= document.getElementById('schedule');
+
+    
+
+        inbox.classList.add('active');
+
+        home.classList.remove('active');
+        squad.classList.remove('active');
+        settings.classList.remove('active');
+        transfers.classList.remove('active');
+        schedule.classList.remove('active');
+        finances.classList.remove('active');
+        flights.classList.remove('active');
+        competitions.classList.remove('active');
+        document.getElementById('tr').classList.remove('active');
+        health.classList.remove('active');
+        career.classList.remove('active');
+    
+  
+}
+
+function home(){
+    const squad = document.getElementById('squad');
+    const home = document.getElementById('home');
+    const inbox = document.getElementById('inbox');
+    const tr = document.getElementById('tr');
+    const career = document.getElementById('career');
+    const finances = document.getElementById('finances');
+    const settings= document.getElementById('settings');
+    const flights = document.getElementById('flights');
+    const competitions = document.getElementById('comp');
+    const health = document.getElementById('health');
+    const transfers = document.getElementById('transfers');
+    const schedule= document.getElementById('schedule');
+
+   
+
+        home.classList.add('active');
+        inbox.classList.remove('active');
+        squad.classList.remove('active');
+        settings.classList.remove('active');
+        transfers.classList.remove('active');
+        schedule.classList.remove('active');
+        finances.classList.remove('active');
+        flights.classList.remove('active');
+        competitions.classList.remove('active');
+        document.getElementById('tr').classList.remove('active');
+        health.classList.remove('active');
+        career.classList.remove('active');
+    
+  
+}
+function squad(){
+    const squad = document.getElementById('squad');
+    const home = document.getElementById('home');
+    const inbox = document.getElementById('inbox');
+    const career = document.getElementById('career');
+    const finances = document.getElementById('finances');
+    const settings= document.getElementById('settings');
+    const flights = document.getElementById('flights');
+    const competitions = document.getElementById('comp');
+    const health = document.getElementById('health');
+    const transfers = document.getElementById('transfers');
+    const schedule= document.getElementById('schedule');
+
+        squad.classList.add('active');
+        inbox.classList.remove('active');
+        home.classList.remove('active');
+        settings.classList.remove('active');
+        transfers.classList.remove('active');
+        schedule.classList.remove('active');
+        finances.classList.remove('active');
+        flights.classList.remove('active');
+        competitions.classList.remove('active');
+        document.getElementById('tr').classList.remove('active');
+        health.classList.remove('active');
+        career.classList.remove('active');
+}
+
+
