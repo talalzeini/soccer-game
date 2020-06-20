@@ -6,7 +6,6 @@ $(document).ready(function(){
     const startButton = document.getElementById('events');
     const mainSide= document.getElementById('side');
     const secondSide= document.getElementById('side1');
-    const skipBut = document.getElementById('skip');
     var inProgress              = false;
 
 
@@ -32,9 +31,6 @@ $(document).ready(function(){
         }
         startButton.classList.add('fact_card');
         startButton.classList.add('fadeRight');
-        skipBut.classList.add('fadeRightOut');
-        skipBut.classList.remove('fadeRight');
-        skipBut.classList.add('skiphid');
 
         $('.start').text('0'); 
 

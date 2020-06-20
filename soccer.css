@@ -4,45 +4,47 @@
     list-style:none;
     text-decoration:none;  
 }
+
 html, body{
     width:100%;
     height:100%;
     overflow:hidden;
-    background-color: #99ccff;
+    background-color: #80ffaa;
     font-family: 'Courier New', Courier, monospace;
 }
-body{
-    background-image: url(fifa1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+
 ::-webkit-scrollbar{
     display:none;
 }
+
 .score_card{
+    transform: scale(1.2);
     width:500px;
     border-radius:30px;
     background-color:red;
     display:block;
-    margin: 30px auto;
+    margin: 70px auto;
     overflow:hidden;
     padding: 30px;
     box-sizing: border-box;
     background-color: rgba(85,85,85, 0.9);
     border: solid 6px #555555;
 }
+
 .inner_card{
     width:400px;
     display:block;
     margin:0 auto;
     overflow:hidden;
-}   
+}  
+
 .left_team, .right_team{
     height:100%;
     display:block;
     width:150px;
     float: left;
 }
+
 .vs{
     float:left;
     text-align:center;
@@ -51,52 +53,52 @@ body{
     padding-top:40px;
     width:calc(100% - 300px);
 }
+
 .left_team .team_container,
 .right_team .team_container{
-
     font-size:18px;
     color:white;
     text-align: right;
-     font-weight:300;
-     width:100%;
-    
+    font-weight:300;
+    width:100%;
 }
+
 .right_team .team_container{
-text-align: left;
+    text-align: left;
 }
+
 .left_team .team_container img,
 .right_team .team_container img{
-width:100px;
-float:right;
-display: block;
-margin: 0 auto;
+    width:100px;
+    float:right;
+    display: block;
+    margin: 10px auto;
 }
+
 .right_team .team_container img{
     float:left;
 }
+
 .left_team .team_container span,
 .right_team .team_container span{
-font-size:50px;
-clear: both;
-display: block;
-width: 81%;
-margin-left: -6px;
+    font-size:50px;
+    clear: both;
+    display: block;
+    width: 81%;
+    margin-left: -6px;
 }
+
 .right_team .team_container span{
     margin-left: 36px;
 }
-
 .start{
     width: 100%;
     font-size: 30px;
     color:white;
-text-align: center;
-display: block;
-padding-top: 30px;
+    text-align: center;
+    display: block;
+    padding-top: 30px;
 }
-
-
-
 .skip{
 
     background: rgba(0, 0, 0, 0.2);
@@ -111,21 +113,7 @@ padding-top: 30px;
     transition: all 0.2s ease-out;
 
 }
-.skiphid{
-    background: transparent;
-    border:none;
-    width: 150px;
-    height:50px;
-    color:transparent;
-    font-size:20px;
-    text-align: center;
-    border-radius: 20px;
-    letter-spacing: 5px;
-    transition: all 0.2s ease-out;
-}
-.skiphid:hover{
-    display: none;
-}
+
 .skip:hover{
     background: rgba(0, 0, 0, 0.4);
     border:none;
@@ -139,22 +127,6 @@ padding-top: 30px;
     letter-spacing: 5px;
 }
 
-.skip1{
-width: 100%;
-font-size: 30px;
-color:white;
-text-align: center;
-display: block;
-padding-top: 150px;
-}
-.bet{
-    width: 100%;
-    font-size: 30px;
-    color:white;
-    text-align: center;
-    display: block;
-    padding-top: 40px;
-}
 .fact_card{
     width: 700px;
     height:300px;
@@ -169,11 +141,10 @@ padding-top: 150px;
 }
 .one_event{
 
-width:100%;
-font-size:23px;
-color:white;
-margin-bottom: 10px;
-
+    width:100%;
+    font-size:23px;
+    color:white;
+    margin-bottom: 10px;
 }
 .but{
     background: rgba(0, 0, 0, 0.2);
@@ -187,6 +158,7 @@ margin-bottom: 10px;
     letter-spacing: 5px;
     transition: all 0.2s ease-out;
 }
+
 .but:hover{
     background: rgba(0, 0, 0, 0.4);
     border:none;
@@ -199,33 +171,6 @@ margin-bottom: 10px;
     border-radius: 20px;
     letter-spacing: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
 
 .hide{
     display: none;
@@ -241,134 +186,203 @@ margin-bottom: 10px;
 
 
 
-/* Navigation bar */
-nav {
-    width: 100%;
-    background: black;
-    height: 80px;
-    top: 0;
-    overflow-y: hidden;
-    position: fixed;
-    z-index: 1;
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width:414px) and (min-width: 320px){
+
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration:none;  
 }
 
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/* Name appearing */
-.content:before {
-    content: 'Talal Zeini';
-    left: 80px;
-    position: fixed;
-    color:white;
-    float: left;
-    display: block;
-    font-size:15px;
-    line-height: 80px;
-    font-weight: normal;   
-}
-/* Middle name appearing on hover */
-.content:hover:before {
-    content: 'Talal Ghassan Zeini';   
-    color:white;
-}
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-nav #menu {
-    float: left;
-    right: 80px;
-    position: fixed;
-}
-nav #menu li {
-    padding-left: 40px;
-    display: inline-block;
-    cursor: pointer;
-    font-weight: 300;
-    line-height: 80px;
-    position: relative;
-    transition: all 0.3s ease-out;
-}
-nav #menu li span {
-    font-weight: 700;
-}
-nav #menu li a {
-    color: #fff;
-    transition: all 0.1s ease-out;
-    font-size:15px;
-    padding: 5px 25px;
-    border-radius:30px;    
-}
-nav #menu li a:hover {
-    text-decoration: none;
-    background-color: white;
-    color:black;
-}
-
-.ayri{
-    color:white;
-    float: right;
-    display: block;
-    color: white;
-    padding: 14px;
-    font-size: 20px;
-    width: 200px;
+html, body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background-color: #80ffaa;
     font-family: 'Courier New', Courier, monospace;
-    text-decoration: none;
-    text-align: center;
-    border: none;
-    background-color: #cc0088;
-    font-weight: normal;
-    margin: 10px;
-    border-radius: 15px;
-    transition: all 0.1s ease-out;
-}
-.ayri .fas{
-    float:left;
-}
-h1{
-    text-align: center;
-    color:white;
-    font-weight: normal;
-    padding-top: 25px;
-
 }
 
-h2{
-    color:white;
-    font-weight: normal;
-    margin-top:15px;
-    margin-left: 15px;
+::-webkit-scrollbar{
+    display:none;
+}
+
+.score_card{
+    width:220px;
+    border-radius:30px;
+    background-color:red;
+    display:block;
+    margin: 40px auto;
+    overflow:hidden;
+    padding: 1px;
+    box-sizing: border-box;
+    background-color: rgba(85,85,85, 0.9);
+    border: solid 2px #555555;
+}
+
+.inner_card{
+    width:400px;
+    display:block;
+    margin:0 auto;
+    overflow:hidden;
+}  
+
+.left_team, .right_team{
+    height:100%;
+    display:block;
+
     float: left;
-    font-size: 15px;
 }
-    .second_card{
-        width: 1310px;
-        display:block;
-        margin: 0 auto;
-        overflow:hidden;
-        height:810px;
-        position: relative;
-        box-sizing: border-box;
-        background-color: rgba(85,85,85, 0.9);
-        border: solid 6px #555555;
-    }
-    .third_card{
-        width: 1300px;
-        display:block;
-        position: relative;
-        margin: 0 auto;
-        overflow:hidden;
-        height:100px;
-        box-sizing: border-box;
-        background-color: rgba(255,255,255, 0.5);
-        border: solid 6px #555555;
-    }
+
+.vs{
+    float:left;
+    text-align:center;
+    color:white;
+    font-size: 20px;
+    padding-top:40px;
+    width:calc(100% - 300px);
+    display: none;
+}
+
+.left_team .team_container,
+.right_team .team_container{
+    font-size:18px;
+    color:white;
+    text-align: right;
+    font-weight:300;
+    width:100%;
+}
+
+.right_team .team_container{
+    text-align: left;
+}
+
+.left_team .team_container img{
+    float:left;
+    margin-right: 85px;
+    margin-top: 40px ;
+}
+
+.right_team .team_container img{
+    float:right;
+    margin-right: 85px;
+    margin-top: 40px;
+}
+.left_team .team_container span{
+    margin-left: -62px;
+}
+.left_team .team_container span,
+.right_team .team_container span{
+    font-size:30px;
+    clear: both;
+    display: block;
+    width: 81%;
+}
+
+.right_team .team_container span{
+    margin-left: 6px;
+}
+.start{
+    width: 100%;
+    font-size: 20px;
+    color:white;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+}
+.skip{
+
+    background: rgba(0, 0, 0, 0.2);
+    border:none;
+    width: 150px;
+    height:50px;
+    color:white;
+    font-size:20px;
+    text-align: center;
+    border-radius: 20px;
+    letter-spacing: 5px;
+    transition: all 0.2s ease-out;
+
+}
+
+.skip:hover{
+    background: rgba(0, 0, 0, 0.4);
+    border:none;
+    width: 150px;
+    height:50px;
+    transform: scale(1.05);
+    color:white;
+    font-size:20px;
+    text-align: center;
+    border-radius: 20px;
+    letter-spacing: 5px;
+}
+
+.fact_card{
+    width: 260px;
+    height:270px;
+    display:block;
+    margin: 0 auto;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border:solid 3px #555555;
+    border-radius: 30px;
+    background-color: rgba(85,85,85, 0.8);
+}
+.one_event{
+
+    width:100%;
+    font-size:14px;
+    color:white;
+}
+.but{
+    background: rgba(0, 0, 0, 0.2);
+    border:none;
+    width: 100px;
+    height:35px;
+    color:white;
+    font-size:14px;
+    text-align: center;
+    border-radius: 20px;
+    letter-spacing: 5px;
+    transition: all 0.2s ease-out;
+    margin-bottom: 10px;
+}
+
+.but:hover{
+    background: rgba(0, 0, 0, 0.4);
+    border:none;
+    width: 100px;
+    height:35px;
+    transform: scale(1.05);
+    color:white;
+    font-size:14px;
+    text-align: center;
+    border-radius: 20px;
+    letter-spacing: 5px;
+}
+
+.hide{
+    display: none;
+}
+
+}
+
+
+
+
+
+
